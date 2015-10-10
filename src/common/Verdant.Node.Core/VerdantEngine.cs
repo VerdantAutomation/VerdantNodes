@@ -135,6 +135,9 @@ namespace Verdant.Node.Core
                 {
                     DateTime now = DateTime.UtcNow;
 
+                    if (_queue.Count == 0)
+                        break;
+
                     // Examine the head item
                     var item = (ScheduleItem)_queue[0];
 

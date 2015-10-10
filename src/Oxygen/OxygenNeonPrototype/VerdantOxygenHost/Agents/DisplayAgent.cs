@@ -21,7 +21,6 @@ namespace VerdantOxygenHost.Agents
         };
         private int _currentItem = 0;
 
-
         public DisplayAgent()
         {
             _lcd = (ILcd2x16Driver)DiContainer.Instance.Resolve(typeof(ILcd2x16Driver));

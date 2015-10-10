@@ -15,9 +15,14 @@ namespace VerdantOxygenHost
                 new VerdantOxygenHost.Installer()
                 );
 
-            var engine = (IVerdantEngine)DiContainer.Instance.Resolve(typeof(IVerdantEngine));
+            // This should be persisted in EWR and always return the same value, but be unique for every node
+            var properties = (PropertyDictionary)DiContainer.Instance.Resolve(typeof(PropertyDictionary));
+            properties.SetProperty(PropertyNames.NodeIdPropName, Guid.NewGuid());
 
-            // Initialize the Verdant Node system
+            //TODO: record number of reboots, boot time, dropped messages, etc as EWR values - pull those out into properties at startup
+
+            // Initialize the Verdant Node framework
+            var engine = (IVerdantEngine)DiContainer.Instance.Resolve(typeof(IVerdantEngine));
             engine.Initialize();
 
             // This function does not return
