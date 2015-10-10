@@ -27,7 +27,6 @@ namespace VerdantOxygenHost.Agents
         {
             // Moving average over 10 readings, with each reading coming every 6 seconds
             // So, roughly, a one-minute moving average
-            Debug.Print("Sense Agent Processing");
             _insideTemp1 = (_insideTemp1Generator.GetReading() + 10.0 * _insideTemp1) / 11;
             _insideTemp2 = (_insideTemp2Generator.GetReading() + 10.0 * _insideTemp2) / 11;
             _outsideTemp = (_outsideTempGenerator.GetReading() + 10.0 * _outsideTemp) / 11;

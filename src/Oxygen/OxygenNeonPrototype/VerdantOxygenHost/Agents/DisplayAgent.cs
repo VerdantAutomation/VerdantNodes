@@ -29,9 +29,7 @@ namespace VerdantOxygenHost.Agents
 
         public DateTime Process(DateTime now)
         {
-            // Every five seconds, update the display if it is not being used for UI
-            Debug.Print("Display Agent Processing");
-
+            // Every few seconds, update the display if it is not being used for UI
             string propName;
             object value;
             var iRetries = _propList.Length;

@@ -4,6 +4,8 @@ using Verdant.Node.Common;
 using Verdant.Node.Core;
 using System.Text;
 using System.Collections;
+using PervasiveDigital.Net;
+using PervasiveDigital;
 
 namespace VerdantOxygenHost.Agents
 {
@@ -11,7 +13,7 @@ namespace VerdantOxygenHost.Agents
 
     class ReportingAgent : IAgent
     {
-        public const int MaximumBacklog = 10;
+        public const int MaximumBacklog = 5;
 
         private TimeSpan ProcessingInterval = new TimeSpan(0, 1, 0);
         private PropertyDictionary _properties;
@@ -35,9 +37,7 @@ namespace VerdantOxygenHost.Agents
         public DateTime Process(DateTime now)
         {
             // Once per minute, send data
-            Debug.Print("Reporting Agent Processing");
-
-            _backlog.Add(CreateJsonPayload());
+            _backlog.Add(CreatePayload());
             while (_backlog.Count > MaximumBacklog)
             {
                 _backlog.RemoveAt(0);
@@ -71,12 +71,21 @@ namespace VerdantOxygenHost.Agents
             }
             sb.Append("]");
 
-            //TODO: send
+            //TODO: With large backlogs and large property sets, this will exceed the ESP8266 buffer. To fix that, send each backlog item separately
 
+            // Send the data
+            var adapter = (INetworkAdapter)DiContainer.Instance.Resolve(typeof(INetworkAdapter));
+            var httpClient = new HttpClient(adapter);
+            var request = new HttpRequest(HttpMethod.Post, new Uri("http://192.168.1.236/"));
+            request.Body = Encoding.UTF8.GetBytes(sb.ToString());
+            //request.ResponseReceived += HttpResponseReceived;
+            httpClient.SendAsync(request);
+
+            //TODO: We're always assuming the tranmission worked, and it doesn't. We're not building up the backlog of failed transmissions
             _backlog.Clear();
         }
 
-        private string CreateJsonPayload()
+        private string CreatePayload()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -91,8 +100,7 @@ namespace VerdantOxygenHost.Agents
 
                 if (value!=null)
                 {
-                    if (i != 0)
-                        sb.Append(",");
+                    sb.Append(",");
                     if (value is double)
                     {
                         sb.Append("\"" + name + "\":" + ((double)value).ToString("N"));

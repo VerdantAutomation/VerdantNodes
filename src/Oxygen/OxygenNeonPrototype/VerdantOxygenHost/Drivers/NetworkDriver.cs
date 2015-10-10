@@ -9,7 +9,7 @@ namespace VerdantOxygenHost.Drivers
 {
     class NetworkDriver : IDriver
     {
-        private NeonWifiDevice _wifi = new NeonWifiDevice();
+        private NeonWifiDevice _wifi;
         private PropertyDictionary _properties;
         private SntpClient _sntpClient;
 
@@ -17,13 +17,17 @@ namespace VerdantOxygenHost.Drivers
         {
             _properties = (PropertyDictionary)DiContainer.Instance.Resolve(typeof(PropertyDictionary));
 
-            //TODO: Get this from EWR
-            _wifi.Connect("CloudGate", "Escal8shun");
+            DiContainer.Instance.Register(typeof(INetworkAdapter), typeof(NeonWifiDevice)).AsSingleton();
+            _wifi = (NeonWifiDevice)DiContainer.Instance.Resolve(typeof(INetworkAdapter));
+
+            //TODO: Get this, the node id, Verdant server, etc., from EWR.  Need to create a settings service.
+            _wifi.Connect("XXX", "XXX");
 
             _sntpClient = new SntpClient(_wifi, "time1.google.com");
             _sntpClient.Start();
 
             _properties.SetProperty(PropertyNames.IPAddressPropName, _wifi.StationIPAddress.ToString());
+
         }
 
         public void Stop()
