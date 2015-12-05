@@ -124,8 +124,7 @@ namespace VerdantOxygenHost.Drivers
 
         public void Start()
         {
-            //ushort address = 0x27;  // DFRobot
-            ushort address = 0x0; // Adafruit, with no jumpers soldered
+            ushort address = 0x27;  // DFRobot
             int clockRateKhz = 400;
 
             I2CDevice.Configuration cfg = new I2CDevice.Configuration(address, clockRateKhz);
@@ -148,8 +147,6 @@ namespace VerdantOxygenHost.Drivers
             Thread.Sleep(1);
             write4bit(LCD_CLEARDISPLAY);
             Thread.Sleep(15);
-
-            Backlight(true);
         }
 
         public void Stop()
