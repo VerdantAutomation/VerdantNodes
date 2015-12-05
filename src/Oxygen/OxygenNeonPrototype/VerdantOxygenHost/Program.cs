@@ -21,6 +21,13 @@ namespace VerdantOxygenHost
 
             //TODO: record number of reboots, boot time, dropped messages, etc as EWR values - pull those out into properties at startup
 
+            // initialize the settings subsystem
+            var settings = (ISettingsProvider)DiContainer.Instance.Resolve(typeof(ISettingsProvider));
+            settings.Initialize(typeof(Program));
+
+            settings.BootCount += 1;
+            settings.CommitChanges();
+
             // Initialize the Verdant Node framework
             var engine = (IVerdantEngine)DiContainer.Instance.Resolve(typeof(IVerdantEngine));
             engine.Initialize();

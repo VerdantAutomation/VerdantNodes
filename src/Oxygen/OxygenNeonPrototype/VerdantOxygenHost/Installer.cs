@@ -12,6 +12,9 @@ namespace VerdantOxygenHost
             container.Register(typeof(IAgentFactory), typeof(Agents.AgentFactory)).AsSingleton();
             container.Register(typeof(ILcd2x16Driver), typeof(Drivers.LcdDriver)).AsSingleton();
             container.Register(typeof(IDriverFactory), typeof(Drivers.DriverFactory)).AsSingleton();
+
+            // Services
+            container.Register(typeof(ISettingsProvider), typeof(Services.SettingsProvider)).AsSingleton();
         }
     }
 }

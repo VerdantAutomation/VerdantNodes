@@ -37,7 +37,7 @@ namespace Verdant.Node.Core
             }
 
             var agentFactory = (IAgentFactory)DiContainer.Instance.Resolve(typeof(IAgentFactory));
-            _agents = agentFactory.CreateAgents();
+            _agents = agentFactory.CreateAgentsForState(EngineStates.Startup);
             foreach (var agent in _agents)
             {
                 try
@@ -208,6 +208,12 @@ namespace Verdant.Node.Core
         {
             _fShutdown = true;
             _scheduleChangedEvent.Set();
+        }
+
+        public void NavigateToEngineState(string newState)
+        {
+            //TODO: send a message to the run process that it shoudld shut down running agents and reconfigure to the new state. Use a synthetic/placeholder agent, defined in .Core, for this purpose
+            throw new NotImplementedException();
         }
 
         private class ScheduleItem

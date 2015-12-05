@@ -5,6 +5,6 @@ namespace Verdant.Node.Common
 {
     public interface IAgentFactory
     {
-        IAgent[] CreateAgents();
+        IAgent[] CreateAgentsForState(string state);
     }
 }
