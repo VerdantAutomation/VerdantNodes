@@ -9,7 +9,7 @@ namespace VerdantOxygenHost.Agents
     {
         private TimeSpan ProcessingInterval = new TimeSpan(0, 0, 3);
         private PropertyDictionary _properties;
-        private ILcd2x16Driver _lcd;
+        private ICharacterLcdDriver _lcd;
 
         private string[] _propList = new string[]
         {
@@ -23,7 +23,7 @@ namespace VerdantOxygenHost.Agents
 
         public DisplayAgent()
         {
-            _lcd = (ILcd2x16Driver)DiContainer.Instance.Resolve(typeof(ILcd2x16Driver));
+            _lcd = (ICharacterLcdDriver)DiContainer.Instance.Resolve(typeof(ICharacterLcdDriver));
             _properties = (PropertyDictionary)DiContainer.Instance.Resolve(typeof(PropertyDictionary));
         }
 

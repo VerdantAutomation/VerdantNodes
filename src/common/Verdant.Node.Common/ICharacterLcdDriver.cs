@@ -3,8 +3,11 @@ using Microsoft.SPOT;
 
 namespace Verdant.Node.Common
 {
-    public interface ILcd2x16Driver : IDriver
+    public interface ICharacterLcdDriver : IDriver
     {
+        int Rows { get; }
+        int Columns { get; }
+
         void Home();
         void Clear();
         void Print(string text);

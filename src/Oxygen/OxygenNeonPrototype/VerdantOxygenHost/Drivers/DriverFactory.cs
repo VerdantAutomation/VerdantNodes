@@ -11,7 +11,7 @@ namespace VerdantOxygenHost.Drivers
         {
             return new IDriver[]
                 {
-                    (IDriver)DiContainer.Instance.Resolve(typeof(ILcd2x16Driver)),
+                    (IDriver)DiContainer.Instance.Resolve(typeof(ICharacterLcdDriver)),
                     new NetworkDriver()
                 };
         }

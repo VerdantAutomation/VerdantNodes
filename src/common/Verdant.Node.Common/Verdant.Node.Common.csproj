@@ -34,7 +34,7 @@
     <Compile Include="IAgentFactory.cs" />
     <Compile Include="IDriver.cs" />
     <Compile Include="IDriverFactory.cs" />
-    <Compile Include="ILcd2x16Driver.cs" />
+    <Compile Include="ICharacterLcdDriver.cs" />
     <Compile Include="ISettingsProvider.cs" />
     <Compile Include="IVerdantEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

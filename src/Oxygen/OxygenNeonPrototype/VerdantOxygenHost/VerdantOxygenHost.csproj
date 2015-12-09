@@ -37,8 +37,10 @@
     <Compile Include="Agents\SenseAgent.cs" />
     <Compile Include="Agents\SyntheticSensor.cs" />
     <Compile Include="Agents\WatchdogAgent.cs" />
+    <Compile Include="Drivers\AdafruitCharacterLcd.cs" />
     <Compile Include="Drivers\DriverFactory.cs" />
-    <Compile Include="Drivers\LcdDriver.cs" />
+    <Compile Include="Drivers\Lcd1602Driver.cs" />
+    <Compile Include="Drivers\Mcp23008.cs" />
     <Compile Include="Drivers\NetworkDriver.cs" />
     <Compile Include="Installer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

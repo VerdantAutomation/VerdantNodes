@@ -23,7 +23,7 @@ namespace VerdantOxygenHost.Drivers
     /// Refer to documentation on the Hitachi HD44780 for more detailed operational information
     /// Eg: <a href="http://lcd-linux.sourceforge.net/pdfdocs/lcd1.pdf" target="_blank" rel="nofollow">http://lcd-linux.sourceforge.net/pdfdocs/lcd1.pdf</a>
     /// </summary>
-    class LcdDriver : ILcd2x16Driver
+    class Lcd1602Driver : ICharacterLcdDriver
     {
         // The following are the first 4 bits of each byte.
         const byte RS = 0x01; // Register select bit. 0=command 1=data
@@ -86,9 +86,12 @@ namespace VerdantOxygenHost.Drivers
         private I2CDevice _myI2C;
         I2CDevice.I2CTransaction[] _i2cXA = new I2CDevice.I2CTransaction[1];
 
-        public LcdDriver()
+        public Lcd1602Driver()
         {
         }
+
+        public int Rows { get { return 2; } }
+        public int Columns { get { return 16; } }
 
         public void Backlight(bool on)
         {
