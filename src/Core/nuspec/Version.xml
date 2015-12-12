@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Versions>
+  <Version package="Verdant.Node.Common">
+    <Major>0</Major>
+    <Minor>0</Minor>
+    <Build>1</Build>
+    <Revision>0</Revision>
+    <Suffix>-beta</Suffix>
+  </Version>
+  <Version package="Verdant.Node.Core">
+    <Major>0</Major>
+    <Minor>0</Minor>
+    <Build>1</Build>
+    <Revision>0</Revision>
+    <Suffix>-beta</Suffix>
+  </Version>
+</Versions>

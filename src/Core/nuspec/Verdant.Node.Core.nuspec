@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>Verdant.Node.Core</id>
+    <title>Core utilities for Verdant</title>
+    <version>0.0.1-beta</version>
+    <authors>Martin Calsyn</authors>
+    <owners>Pervasive Digital LLC</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0.html</licenseUrl>
+    <projectUrl>https://github.com/Verdant</projectUrl>
+    <iconUrl>https://dl.dropboxusercontent.com/u/24099742/Pervasive-Digital-Icon-notext.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Core device-independent utilities for Verdant Nodes</summary>
+    <description>
+      This library provides includes the core functionality for all Verdant Nodes.
+    </description>
+    <releaseNotes>Initial release</releaseNotes>
+    <copyright>Copyright 2015 Pervasive Digital LLC</copyright>
+    <tags>NETMF MicroFramework IoT</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="Microsoft.SPOT.Native" />
+    </frameworkAssemblies>
+    <dependencies>
+      <dependency id="Verdant.Node.Common" version="0.0.1-beta" />
+    </dependencies>
+  </metadata>
+</package>
