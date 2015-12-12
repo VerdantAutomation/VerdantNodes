@@ -55,6 +55,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuspec", "nuspec", "{FD460C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildCoreNugetPackages", "Core\BuildCoreNugetPackages\BuildCoreNugetPackages.csproj", "{82EFB57D-16EE-49AA-A980-0505A441F011}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Definitions", "Definitions", "{13C111D7-9A3F-4637-973A-E056F2887A00}"
+	ProjectSection(SolutionItems) = preProject
+		Definitions\Verdant.Node.Hardware.Mainboard.Oxygen-0.0.1.0.json = Definitions\Verdant.Node.Hardware.Mainboard.Oxygen-0.0.1.0.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Core\Verdant.Node.Core.Shared\Verdant.Node.Core.Shared.projitems*{8d57bc5d-7f24-4896-93ac-77f81e102526}*SharedItemsImports = 4
