@@ -1,8 +1,8 @@
 {
-  "type": "http://verdant.io/definitions/node/hardware/mainboard",
   "mainboardDefinition": {
     "name": "Oxygen",
     "hardware": {
+      "version": "1.0",
       "cpus": [
         {
           "speed": "96MHz",
@@ -11,12 +11,6 @@
           "family": "Cortex",
           "subfamily": "M4",
           "model": "STM32F411CEU6"
-        }
-      ],
-      "os": [
-        {
-          "id": "netmf",
-          "version": ">4.3"
         }
       ],
       "buses": [
@@ -132,16 +126,37 @@
         }
       ]
     },
-    "software": {
-      "toolchain": "vs2015",
-      "buildCmd": "",
-      "projectTemplate": "url to blob goes here",
-      "requiresNuget": [
-        {
-          "id": "Verdant.Node.Core",
-          "version": "0.0.1-beta"
-        }
-      ]
-    }
+    "software": [
+      {
+        "host": {
+          "id": "netmf",
+          "version": "(4.3,4.4] TODO:verify format for semantic versions"
+        },
+        "toolchain": "vs2015",
+        "buildCmd": "",
+        "projectTemplate": "url to blob goes here",
+        "requiresNuget": [
+          {
+            "id": "Verdant.Node.Core",
+            "version": "0.0.1-beta"
+          }
+        ]
+      },
+      {
+        "host": {
+          "id": "netmf",
+          "version": "(4.4,]"
+        },
+        "toolchain": "vs2015",
+        "buildCmd": "",
+        "projectTemplate": "url to blob goes here",
+        "requiresNuget": [
+          {
+            "id": "Verdant.Node.Core",
+            "version": "0.0.1-beta"
+          }
+        ]
+      }
+    ]
   }
 }
