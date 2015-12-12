@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>72d4d7e0-fa11-454a-81a0-f432b5f9db9c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Verdant.Node.Core.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Installer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IoC\Container.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IoC\DiContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IoC\IContainerInstaller.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PropertyDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)VerdantEngine.cs" />
+  </ItemGroup>
+</Project>

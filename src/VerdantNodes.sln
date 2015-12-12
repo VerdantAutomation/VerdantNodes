@@ -1,0 +1,104 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{D0B94B32-D05E-495F-82C1-0D1E16A6D680}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hardware", "Hardware", "{A76C4E37-33E2-4B4B-AC8E-FFE8DAF17243}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Verdant.Node.Common.Shared", "Core\Verdant.Node.Common.Shared\Verdant.Node.Common.Shared.shproj", "{4BE3B962-266A-4522-B0B3-B237F2646976}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Verdant.Node.Core.Shared", "Core\Verdant.Node.Core.Shared\Verdant.Node.Core.Shared.shproj", "{72D4D7E0-FA11-454A-81A0-F432B5F9DB9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verdant.Node.Common.43", "Core\Verdant.Node.Common.43\Verdant.Node.Common.43.csproj", "{22AF58E2-6CD4-4E97-8810-9B92CC24D243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verdant.Node.Common.44", "Core\Verdant.Node.Common.44\Verdant.Node.Common.44.csproj", "{B0C504A7-4437-46F7-BC28-047DB917FF34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verdant.Node.Core.43", "Core\Verdant.Node.Core.43\Verdant.Node.Core.43.csproj", "{8D57BC5D-7F24-4896-93AC-77F81E102526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verdant.Node.Core.44", "Core\Verdant.Node.Core.44\Verdant.Node.Core.44.csproj", "{3ABAFD66-F1E7-4807-B98E-5802939417C9}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Verdant.Node.Hardware.Display.Adafruit292.Shared", "Hardware\Verdant.Node.Hardware.Display.Adafruit292.Shared\Verdant.Node.Hardware.Display.Adafruit292.Shared.shproj", "{96F33B0A-AAC4-47AE-A7B9-900059EAA621}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Verdant.Node.Hardware.Display.DfrobotLcd1602.Shared", "Hardware\Verdant.Node.Hardware.Display.DfrobotLcd1602.Shared\Verdant.Node.Hardware.Display.DfrobotLcd1602.Shared.shproj", "{EC6A301E-8A51-48D1-908F-16A7C29C913E}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Verdant.Node.Hardware.PortExpander.Mcp23008.Shared", "Hardware\Verdant.Node.Hardware.PortExpander.Mcp23008.Shared\Verdant.Node.Hardware.PortExpander.Mcp23008.Shared.shproj", "{DB6F3C40-AD94-462E-9185-DFEC96260DB3}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Verdant.Node.Hardware.Sensor.Hdc1008.Shared", "Hardware\Verdant.Node.Hardware.Sensor.Hdc1008.Shared\Verdant.Node.Hardware.Sensor.Hdc1008.Shared.shproj", "{F299C426-BD71-49D8-B720-D5C994F27E49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NodeBuilder", "NodeBuilder", "{99D38084-C797-4B03-9388-2310846AC998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeBuilder", "NodeBuilder\NodeBuilder\NodeBuilder.csproj", "{145944B9-E496-40E1-90A8-B0CC10E74BD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nodes", "Nodes", "{E265EF9A-EEBC-4368-9A17-79FCEEE09BA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9D959A8A-C6FB-4DBC-8F7B-599976B130DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerdantOxygenHost", "Nodes\Test\VerdantOxygenHost\VerdantOxygenHost.csproj", "{1E269090-820E-487C-AE30-512394040F54}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Core\Verdant.Node.Core.Shared\Verdant.Node.Core.Shared.projitems*{8d57bc5d-7f24-4896-93ac-77f81e102526}*SharedItemsImports = 4
+		Core\Verdant.Node.Core.Shared\Verdant.Node.Core.Shared.projitems*{3abafd66-f1e7-4807-b98e-5802939417c9}*SharedItemsImports = 4
+		Hardware\Verdant.Node.Hardware.Sensor.Hdc1008.Shared\Verdant.Node.Hardware.Hdc1008.Shared.projitems*{f299c426-bd71-49d8-b720-d5c994f27e49}*SharedItemsImports = 13
+		Hardware\Verdant.Node.Hardware.PortExpander.Mcp23008.Shared\Verdant.Node.Hardware.Mcp23008.Shared.projitems*{db6f3c40-ad94-462e-9185-dfec96260db3}*SharedItemsImports = 13
+		Hardware\Verdant.Node.Hardware.Display.Adafruit292.Shared\Verdant.Node.Hardware.Display.Adafruit292.Shared.projitems*{96f33b0a-aac4-47ae-a7b9-900059eaa621}*SharedItemsImports = 13
+		Hardware\Verdant.Node.Hardware.Display.Adafruit292.Shared\Verdant.Node.Hardware.Display.Adafruit292.Shared.projitems*{1e269090-820e-487c-ae30-512394040f54}*SharedItemsImports = 4
+		Core\Verdant.Node.Common.Shared\Verdant.Node.Common.Shared.projitems*{22af58e2-6cd4-4e97-8810-9b92cc24d243}*SharedItemsImports = 4
+		Core\Verdant.Node.Common.Shared\Verdant.Node.Common.Shared.projitems*{4be3b962-266a-4522-b0b3-b237f2646976}*SharedItemsImports = 13
+		Core\Verdant.Node.Common.Shared\Verdant.Node.Common.Shared.projitems*{b0c504a7-4437-46f7-bc28-047db917ff34}*SharedItemsImports = 4
+		Hardware\Verdant.Node.Hardware.Display.DfrobotLcd1602.Shared\Verdant.Node.Hardware.Display.DfrobotLcd1602.Shared.projitems*{ec6a301e-8a51-48d1-908f-16a7c29c913e}*SharedItemsImports = 13
+		Core\Verdant.Node.Core.Shared\Verdant.Node.Core.Shared.projitems*{72d4d7e0-fa11-454a-81a0-f432b5f9db9c}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22AF58E2-6CD4-4E97-8810-9B92CC24D243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22AF58E2-6CD4-4E97-8810-9B92CC24D243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22AF58E2-6CD4-4E97-8810-9B92CC24D243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22AF58E2-6CD4-4E97-8810-9B92CC24D243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C504A7-4437-46F7-BC28-047DB917FF34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C504A7-4437-46F7-BC28-047DB917FF34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C504A7-4437-46F7-BC28-047DB917FF34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C504A7-4437-46F7-BC28-047DB917FF34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D57BC5D-7F24-4896-93AC-77F81E102526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D57BC5D-7F24-4896-93AC-77F81E102526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D57BC5D-7F24-4896-93AC-77F81E102526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D57BC5D-7F24-4896-93AC-77F81E102526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ABAFD66-F1E7-4807-B98E-5802939417C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ABAFD66-F1E7-4807-B98E-5802939417C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ABAFD66-F1E7-4807-B98E-5802939417C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ABAFD66-F1E7-4807-B98E-5802939417C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{145944B9-E496-40E1-90A8-B0CC10E74BD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{145944B9-E496-40E1-90A8-B0CC10E74BD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{145944B9-E496-40E1-90A8-B0CC10E74BD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{145944B9-E496-40E1-90A8-B0CC10E74BD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E269090-820E-487C-AE30-512394040F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E269090-820E-487C-AE30-512394040F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E269090-820E-487C-AE30-512394040F54}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1E269090-820E-487C-AE30-512394040F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E269090-820E-487C-AE30-512394040F54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E269090-820E-487C-AE30-512394040F54}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4BE3B962-266A-4522-B0B3-B237F2646976} = {D0B94B32-D05E-495F-82C1-0D1E16A6D680}
+		{72D4D7E0-FA11-454A-81A0-F432B5F9DB9C} = {D0B94B32-D05E-495F-82C1-0D1E16A6D680}
+		{22AF58E2-6CD4-4E97-8810-9B92CC24D243} = {D0B94B32-D05E-495F-82C1-0D1E16A6D680}
+		{B0C504A7-4437-46F7-BC28-047DB917FF34} = {D0B94B32-D05E-495F-82C1-0D1E16A6D680}
+		{8D57BC5D-7F24-4896-93AC-77F81E102526} = {D0B94B32-D05E-495F-82C1-0D1E16A6D680}
+		{3ABAFD66-F1E7-4807-B98E-5802939417C9} = {D0B94B32-D05E-495F-82C1-0D1E16A6D680}
+		{96F33B0A-AAC4-47AE-A7B9-900059EAA621} = {A76C4E37-33E2-4B4B-AC8E-FFE8DAF17243}
+		{EC6A301E-8A51-48D1-908F-16A7C29C913E} = {A76C4E37-33E2-4B4B-AC8E-FFE8DAF17243}
+		{DB6F3C40-AD94-462E-9185-DFEC96260DB3} = {A76C4E37-33E2-4B4B-AC8E-FFE8DAF17243}
+		{F299C426-BD71-49D8-B720-D5C994F27E49} = {A76C4E37-33E2-4B4B-AC8E-FFE8DAF17243}
+		{145944B9-E496-40E1-90A8-B0CC10E74BD6} = {99D38084-C797-4B03-9388-2310846AC998}
+		{9D959A8A-C6FB-4DBC-8F7B-599976B130DB} = {E265EF9A-EEBC-4368-9A17-79FCEEE09BA9}
+		{1E269090-820E-487C-AE30-512394040F54} = {9D959A8A-C6FB-4DBC-8F7B-599976B130DB}
+	EndGlobalSection
+EndGlobal
