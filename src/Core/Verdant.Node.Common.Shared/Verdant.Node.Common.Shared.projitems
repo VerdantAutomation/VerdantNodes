@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4be3b962-266a-4522-b0b3-b237f2646976</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Verdant.Node.Common.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)IAgent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IAgentFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ICharacterLcdDriver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDriver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IDriverFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ISettingsProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IVerdantEngine.cs" />
+  </ItemGroup>
+</Project>

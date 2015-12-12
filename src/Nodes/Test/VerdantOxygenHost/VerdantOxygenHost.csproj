@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <AssemblyName>VerdantOxygenHost</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VerdantOxygenHost</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1E269090-820E-487C-AE30-512394040F54}</ProjectGuid>
+    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Agents\AgentFactory.cs" />
+    <Compile Include="Agents\DisplayAgent.cs" />
+    <Compile Include="Agents\OnboardingAgent.cs" />
+    <Compile Include="Agents\ReportingAgent.cs" />
+    <Compile Include="Agents\SenseAgent.cs" />
+    <Compile Include="Agents\SyntheticSensor.cs" />
+    <Compile Include="Agents\WatchdogAgent.cs" />
+    <Compile Include="Drivers\AdafruitCharacterLcd.cs" />
+    <Compile Include="Drivers\DriverFactory.cs" />
+    <Compile Include="Drivers\Lcd1602Driver.cs" />
+    <Compile Include="Drivers\Mcp23008.cs" />
+    <Compile Include="Drivers\NetworkDriver.cs" />
+    <Compile Include="Installer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="PropertyNames.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Services\SettingsProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Graphics" />
+    <Reference Include="Microsoft.SPOT.Hardware" />
+    <Reference Include="Microsoft.SPOT.Hardware.SerialPort" />
+    <Reference Include="Microsoft.SPOT.Native" />
+    <Reference Include="PervasiveDigital.Hardware.ESP8266, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PervasiveDigital.Hardware.ESP8266.3.0.0-beta\lib\netmf44\PervasiveDigital.Hardware.ESP8266.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PervasiveDigital.Net, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PervasiveDigital.Net.3.0.0-beta\lib\netmf44\PervasiveDigital.Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PervasiveDigital.Utility, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PervasiveDigital.Utility.3.0.0-beta\lib\netmf44\PervasiveDigital.Utility.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\Verdant.Node.Common.44\Verdant.Node.Common.44.csproj">
+      <Project>{B0C504A7-4437-46F7-BC28-047DB917FF34}</Project>
+      <Name>Verdant.Node.Common.44</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\Verdant.Node.Core.44\Verdant.Node.Core.44.csproj">
+      <Project>{3ABAFD66-F1E7-4807-B98E-5802939417C9}</Project>
+      <Name>Verdant.Node.Core.44</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="..\..\..\Hardware\Verdant.Node.Hardware.Display.Adafruit292.Shared\Verdant.Node.Hardware.Display.Adafruit292.Shared.projitems" Label="Shared" />
+  <Import Condition="EXISTS('$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets')" Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <Import Condition="!EXISTS('$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets')" Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
