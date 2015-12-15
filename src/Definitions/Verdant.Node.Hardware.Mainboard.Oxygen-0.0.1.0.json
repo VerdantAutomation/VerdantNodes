@@ -6,7 +6,7 @@
       "cpus": [
         {
           "speed": "96MHz",
-          "membus": 32,
+          "width": 32,
           "architecture": "arm",
           "family": "Cortex",
           "subfamily": "M4",
@@ -19,7 +19,7 @@
           "channels": [
             {
               "name": "I2C",
-              "excludes": [ "*.PB8", "*.PB9" ]
+              "uses": [ "PB8", "PB9" ]
             }
           ]
         },
@@ -28,11 +28,11 @@
           "channels": [
             {
               "name": "SPI1",
-              "excludes": [ "*.PA5", "*.PA6", "*.PA7" ]
+              "uses": [ "PA5", "PA6", "PA7" ]
             },
             {
               "name": "SPI2",
-              "excludes": [ "*.PB15", "*.PB14", "*.PB13" ]
+              "uses": [ "PB15", "PB14", "PB13" ]
             }
           ]
         },
@@ -41,47 +41,47 @@
           "channels": [
             {
               "name": "PA0",
-              "excludes": [ "*.PA0" ]
+              "uses": [ "PA0" ]
             },
             {
               "name": "PA1",
-              "excludes": [ "*.PA1" ]
+              "uses": [ "PA1" ]
             },
             {
               "name": "PA2",
-              "excludes": [ "*.PA2" ]
+              "uses": [ "PA2" ]
             },
             {
               "name": "PA3",
-              "excludes": [ "*.PA3" ]
+              "uses": [ "PA3" ]
             },
             {
               "name": "PA4",
-              "excludes": [ "*.PA4" ]
+              "uses": [ "PA4" ]
             },
             {
               "name": "PB0",
-              "excludes": [ "*.PB0" ]
+              "uses": [ "PB0" ]
             },
             {
               "name": "PB1",
-              "excludes": [ "*.PB1" ]
+              "uses": [ "PB1" ]
             },
             {
               "name": "PC0",
-              "excludes": [ "*.PC0" ]
+              "uses": [ "PC0" ]
             },
             {
               "name": "PC1",
-              "excludes": [ "*.PC1" ]
+              "uses": [ "PC1" ]
             },
             {
               "name": "PC2",
-              "excludes": [ "*.PC2" ]
+              "uses": [ "PC2" ]
             },
             {
               "name": "PC3",
-              "excludes": [ "*.PC3" ]
+              "uses": [ "PC3" ]
             }
           ]
         },
@@ -96,67 +96,60 @@
           "channels": [
             {
               "name": "PB0",
-              "excludes": [ "*.PB0" ]
+              "uses": [ "PB0" ]
             },
             {
               "name": "PB1",
-              "excludes": [ "*.PB1" ]
+              "uses": [ "PB1" ]
             },
             {
               "name": "PB4",
-              "excludes": [ "*.PB4" ]
+              "uses": [ "PB4" ]
             }
 
           ]
         },
         {
-          "busType": "uartsimple",
+          "busType": "uart",
           "channels": [
             {
               "name": "UART1",
               "features": [ "TX", "RX" ],
-              "excludes": [ "*.PA9", "*.PA10" ]
+              "uses": [ "PA9", "PA10" ]
             },
             {
               "name": "UART2",
               "features": [ "TX", "RX", "CTS", "RTS" ],
-              "excludes": [ "*.PA0", "*.PA1", "*.PA2", "*.PA3" ]
+              "uses": [ "PA0", "PA1", "PA2", "PA3" ]
             }
           ]
         }
       ]
     },
-    "software": [
-      {
-        "host": {
-          "id": "netmf",
+    "software": {
+      "packageName": "Oxygen.package-0.0.1.0.zip",
+      "environment": {
+        "os": {
+          "name": "netmf",
+          "version": ""
+        },
+        "stack": {
+          "name": "netmf",
           "version": "(4.3,4.4] TODO:verify format for semantic versions"
         },
-        "toolchain": "vs2015",
-        "buildCmd": "",
-        "projectTemplate": "url to blob goes here",
-        "requiresNuget": [
-          {
-            "id": "Verdant.Node.Core",
-            "version": "0.0.1-beta"
-          }
-        ]
+        "toolchain": "vs2015"
       },
-      {
-        "host": {
-          "id": "netmf",
-          "version": "(4.4,]"
-        },
-        "toolchain": "vs2015",
-        "buildCmd": "",
-        "projectTemplate": "url to blob goes here",
-        "requiresNuget": [
-          {
-            "id": "Verdant.Node.Core",
-            "version": "0.0.1-beta"
-          }
-        ]
-      }
-    ]
+      "implements": [ "IMainBoard" ],
+      "requires": [ ],
+      "solution": {
+        "buildCmd": ""
+      },
+      "requiresNuget": [
+        {
+          "id": "Verdant.Node.Core",
+          "version": "0.0.1-beta"
+        }
+      ]
+    }
   }
 }

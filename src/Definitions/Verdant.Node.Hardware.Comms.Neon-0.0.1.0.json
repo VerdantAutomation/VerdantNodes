@@ -1,0 +1,68 @@
+{
+  "componentDefinition": {
+    "name": "Neon",
+    "description": "Neon ESP8266 serial wifi breakout board",
+    "hardware": {
+      "version": ">1.0",
+      "requires": [
+        {
+          "bus": "uart",
+          "channels": 1,
+          "features": [ "RX", "TX" ]
+        }
+      ]
+    },
+    "software": {
+      "packageName": "neon.package-0.0.1.0.zip",
+      "environment": {
+        "os": {
+          "name": "netmf",
+          "version": ""
+        },
+        "stack": {
+          "name": "netmf",
+          "version": "(4.3,4.4] TODO:verify format for semantic versions"
+        },
+        "toolchain": "vs2015"
+      },
+      "implements": [
+        "INetworkInterface",
+        "IWifiNetworkInterface"
+      ],
+      "requires": [
+        "IMainBoard"
+      ],
+      "requiresNuget": [
+        {
+          "id": "Verdant.Node.Core",
+          "version": "0.0.1-beta"
+        },
+        {
+          "id": "PervasiveDigital.Hardware.ESP8266",
+          "version": "3.0.2-beta"
+        }
+      ],
+      "requiresFramework": [
+        "Microsoft.Spot.Native",
+        "Microsoft.Spot.Hardware.Serial"
+      ],
+      "sourceTemplates": [
+        {
+          "source": "NeonNetworkDriver.tt",
+          "dest": "NeonNetworkDriver.cs",
+          "substitutions": [
+            {
+              "name": "port",
+              "description": "COM port",
+              "required": true,
+              "validator": {
+                "type": "regex",
+                "pattern": "COM[\\d]{0-2}:"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
