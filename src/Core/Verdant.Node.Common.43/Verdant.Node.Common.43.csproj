@@ -34,6 +34,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SPOT.Native" />
+    <Reference Include="System" />
   </ItemGroup>
   <Import Project="..\Verdant.Node.Common.Shared\Verdant.Node.Common.Shared.projitems" Label="Shared" />
   <Import Condition="EXISTS('$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets')" Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />

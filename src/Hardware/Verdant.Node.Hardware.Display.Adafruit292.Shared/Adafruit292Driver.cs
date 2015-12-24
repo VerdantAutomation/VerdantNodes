@@ -2,7 +2,7 @@
 using System.Text;
 using Verdant.Node.Common;
 
-namespace Verdant.Node.Hardware.Display.Adafruit292.Shared
+namespace Verdant.Node.Hardware.Display.Adafruit292
 {
     class Adafruit292Driver : ICharacterLcdDriver
     {
