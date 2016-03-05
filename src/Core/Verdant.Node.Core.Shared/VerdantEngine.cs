@@ -23,8 +23,8 @@ namespace Verdant.Node.Core
         public void Initialize()
         {
             var driverFactory = (IDriverFactory)DiContainer.Instance.Resolve(typeof(IDriverFactory));
-            _drivers = driverFactory.CreateDrivers();
-            foreach (var driver in _drivers)
+            var primary = driverFactory.CreatePrimaryDrivers();
+            foreach (var driver in primary)
             {
                 try
                 {
@@ -35,6 +35,29 @@ namespace Verdant.Node.Core
                     Debug.Print("Exception during agent start : " + exDriverStart);
                 }
             }
+
+            // initialize the settings subsystem
+            var settings = (ISettingsProvider)DiContainer.Instance.Resolve(typeof(ISettingsProvider));
+            settings.Initialize();
+
+            settings.BootCount += 1;
+            settings.CommitChanges();
+
+            var secondary = driverFactory.CreateSecondaryDrivers();
+            foreach (var driver in secondary)
+            {
+                try
+                {
+                    driver.Start();
+                }
+                catch (Exception exDriverStart)
+                {
+                    Debug.Print("Exception during agent start : " + exDriverStart);
+                }
+            }
+            _drivers = new IDriver[primary.Length + secondary.Length];
+            primary.CopyTo(_drivers, 0);
+            secondary.CopyTo(_drivers, primary.Length);
 
             var agentFactory = (IAgentFactory)DiContainer.Instance.Resolve(typeof(IAgentFactory));
             _agents = agentFactory.CreateAgentsForState(EngineStates.Startup);
@@ -112,7 +135,7 @@ namespace Verdant.Node.Core
         {
             while (true)
             {
-                if (_queue.Count==0)
+                if (_queue.Count == 0)
                 {
                     // The queue is empty - wait for something to get inserted
                     _scheduleChangedEvent.WaitOne();
@@ -121,7 +144,7 @@ namespace Verdant.Node.Core
                 {
                     var nextTime = ((ScheduleItem)_queue[0]).RunAt;
                     int delay = TimeSpan.FromTicks(nextTime.Ticks - DateTime.UtcNow.Ticks).Milliseconds;
-                    if (delay>0)
+                    if (delay > 0)
                         _scheduleChangedEvent.WaitOne(delay, false);
                 }
 
@@ -224,7 +247,7 @@ namespace Verdant.Node.Core
                 this.RunAt = runAt;
             }
 
-            public DateTime RunAt{ get; set; }
+            public DateTime RunAt { get; set; }
             public IAgent Target { get; private set; }
         }
     }

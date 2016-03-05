@@ -5,7 +5,7 @@ namespace Verdant.Node.Common
 {
     public interface ISettingsProvider
     {
-        void Initialize(Type appType);
+        void Initialize();
         void CommitChanges();
 
         // Node identity
@@ -13,13 +13,17 @@ namespace Verdant.Node.Common
         string ConfigUrl { get; set; }
         string HaveConfigId { get; set; }
 
-        // configuration vlues
+        // configuration values
         string WifiSSID { get; set; }
         string WifiPassword { get; set; }
         string GatewayUrl { get; set; }
+        bool UseDhcp { get; set; }
+        string IpAddress { get; set; }
+        string IpGateway { get; set; }
+        string IpNetmask { get; set; }
+        string DnsServers { get; set; }
 
         // local statistics
         int BootCount { get; set; }
-        int DroppedMessages { get; set; }
     }
 }

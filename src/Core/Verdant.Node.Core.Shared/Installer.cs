@@ -11,6 +11,7 @@ namespace Verdant.Node.Core
         {
             container.Register(typeof(IVerdantEngine), typeof(VerdantEngine)).AsSingleton();
             container.Register(typeof(PropertyDictionary), typeof(PropertyDictionary)).AsSingleton();
+            container.Register(typeof(ISpiChannelManager), typeof(ISpiChannelManager)).AsSingleton();
         }
     }
 }

@@ -10,10 +10,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Installer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IoC\Container.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IoC\DiContainer.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IoC\IContainerInstaller.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PropertyDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SpiChannelManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)VerdantEngine.cs" />
   </ItemGroup>
 </Project>

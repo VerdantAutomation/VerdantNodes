@@ -11,13 +11,20 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)IAgent.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IAgentFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IAnnunciator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IAnnunciatorArray.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IAnnunciatorEngine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IBlockDriver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IBlockStorage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ICharacterLcdDriver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IDriver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IDriverFactory.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IEnumeratedDevice.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IoC\Container.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IoC\DiContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IoC\IContainerInstaller.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ISettingsProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ISpiChannelManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IVerdantEngine.cs" />
   </ItemGroup>
 </Project>
